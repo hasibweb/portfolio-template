@@ -1,0 +1,19 @@
+/* Vendor */
+
+@import './vendor/bootstrap-reboot.min.css';
+@import './vendor/bootstrap.min.css';
+/* Plugins */
+
+@import './plugins/owl.carousel.min.css';
+@import './plugins/aos.css';
+/* Library */
+
+@import './lib/css/font-awesome.min.css';
+/* Styles */
+
+@import './base.css';
+@import './sidebar.css';
+@import './content.css';
+/* Responsive */
+
+@import './responsive.css';
