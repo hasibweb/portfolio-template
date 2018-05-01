@@ -8,3 +8,30 @@
     margin-top: 50px;
     padding: 10px 40px;
 }
+
+/* ================= Portfolio Area ================= */
+
+.portfolio-area .portfolio-items .row>div[class^="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* ================= Services Area ================= */
+
+.services-area figure {
+    color: #222;
+    padding: 25px 10px;
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.services-area figure h5 {
+    color: #304ffe;
+    margin: 25px 0;
+}
+
+.services-area .services-row>div[class^="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+}
