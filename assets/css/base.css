@@ -52,6 +52,10 @@ h6 {
     border-color: #304ffe;
 }
 
+.bg-primary {
+    background: #304ffe;
+}
+
 .card .card-body,
 .card a {
     color: #222;
