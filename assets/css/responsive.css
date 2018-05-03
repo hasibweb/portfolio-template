@@ -22,4 +22,8 @@
     .hero-area {
         padding: 40px 10px 0;
     }
+    /* Skill */
+    .skills-area .test-message {
+        padding: 30px 0;
+    }
 }
