@@ -70,9 +70,10 @@
     function heroSlider() {
         var slider = $('.hero-slider-init');
         var sliderNav = $('.hero-slider-nav');
+        var count = $('.hero-slider-nav li').length;
         slider.slick({slidesToShow: 1, slidesToScroll: 1, arrows: false, asNavFor: sliderNav})
         sliderNav.slick({
-            slidesToShow: 3,
+            slidesToShow: count,
             slidesToScroll: 1,
             arrows: false,
             asNavFor: slider,

@@ -16,14 +16,15 @@
     right: 0;
     width: 50px;
     transform: translateY(-50%);
+    height: 100%;
 }
 
 .hero-slider-nav .slick-list .slick-track .slick-slide {
     transform: rotate(90deg);
 }
 
-.hero-slider-nav .slick-list .slick-track .slick-slide:not(:last-child) {
-    margin-bottom: 30px;
+.hero-slider-nav .slick-list .slick-track .slick-slide {
+    margin-top: 50px;
 }
 
 /* ================= Portfolio Area ================= */
