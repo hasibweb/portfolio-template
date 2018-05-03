@@ -220,6 +220,7 @@ h6 {
     z-index: 9999;
     background: rebeccapurple;
     transition: .3s ease-in-out;
+    overflow-y: scroll;
 }
 
 .mobile-menu-slide.show {
