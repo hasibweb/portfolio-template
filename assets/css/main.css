@@ -4,7 +4,7 @@
 @import './vendor/bootstrap.min.css';
 /* Plugins */
 
-@import './plugins/owl.carousel.min.css';
+@import './plugins/slick.css';
 @import './plugins/aos.css';
 /* Library */
 
