@@ -1,17 +1,25 @@
-@media (min-width: 1200px) {
+@media (min-width: 576px) {
     .container {
         max-width: 94%;
     }
 }
 
-@media (min-width: 992px) {
-    .container {
-        max-width: 95%;
+@media (max-width: 576px) {
+    /* common style */
+    h1 {
+        font-size: 45px;
     }
-}
-
-@media (min-width: 768px) {
-    .container {
-        max-width: 95%;
+    /* Rounded Button */
+    .hire-us-btn a {
+        margin-right: 0;
+    }
+    .hire-us-btn a::after {
+        width: 180px;
+        height: 180px;
+        bottom: -22px;
+    }
+    /* Hero Area */
+    .hero-area {
+        padding: 40px 10px 0;
     }
 }

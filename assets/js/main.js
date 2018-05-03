@@ -65,7 +65,7 @@
         // Hide on click outside
         $(document).on('click', function (e) {
             if (!(e.target.closest('.mobile-menu-slide'))) {
-                $('.mobile-menu-slide').toggleClass('show');
+                $('.mobile-menu-slide').removeClass('show');
             }
         })
 
