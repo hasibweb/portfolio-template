@@ -2,11 +2,28 @@
 
 .hero-area {
     padding: 80px 30px 0;
+    position: relative;
 }
 
 .hero-area .btn {
     margin-top: 50px;
     padding: 10px 40px;
+}
+
+.hero-slider-nav {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50px;
+    transform: translateY(-50%);
+}
+
+.hero-slider-nav .slick-list .slick-track .slick-slide {
+    transform: rotate(90deg);
+}
+
+.hero-slider-nav .slick-list .slick-track .slick-slide:not(:last-child) {
+    margin-bottom: 30px;
 }
 
 /* ================= Portfolio Area ================= */

@@ -17,6 +17,7 @@
         preloaderSetup();
         heroSlider();
         // animations();
+
     });
 
     // Document Ready Function
@@ -26,27 +27,22 @@
     });
 
     // Window Resize Function
-    $(window).on('resize', function () {
-
-    });
+    $(window).on('resize', function () {});
 
     // Window Scroll Function
-    $(window).on('scroll', function () {
-
-    });
+    $(window).on('scroll', function () {});
 
     // ========================== preloaderSetup ==========================
     function preloaderSetup() {
-        $('#preloader').fadeOut('slow', function () {
-            $(this).remove();
-        });
+        $('#preloader')
+            .fadeOut('slow', function () {
+                $(this).remove();
+            });
     } // preloaderSetup
 
-    // ========================== Animations ==========================    
+    // ========================== Animations ==========================
     function animations() {
-        AOS.init({
-            offset: 50
-        });
+        AOS.init({offset: 50});
 
     }
 
@@ -72,40 +68,43 @@
     }
     // ========================== HeroSlider ==========================
     function heroSlider() {
-        var slider = $('.hero-slider');
-        slider.owlCarousel({
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 10300,
-            smartSpeed: 568,
-            mouseDrag: false,
-            margin: 0,
-            nav: true,
-            items: 1,
-            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-            animateOut: 'fadeOutUp',
-            animateIn: 'fadeIn',
-            onTranslate: translateAnim,
-            onTranslated: translatedAnim
-        });
+        var slider = $('.hero-slider-init');
+        var sliderNav = $('.hero-slider-nav');
+        slider.slick({slidesToShow: 1, slidesToScroll: 1, arrows: false, asNavFor: sliderNav})
+        sliderNav.slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false,
+            asNavFor: slider,
+            dots: true,
+            centerMode: true,
+            focusOnSelect: true,
+            vertical: true
+        })
 
         // Add Animation Globaly
-        slider.find('[data-animation]').each(function () {
-            var animation = $(this).data('animation');
-            $(this).addClass(animation + ' animated')
-        })
+        slider
+            .find('[data-animation]')
+            .each(function () {
+                var animation = $(this).data('animation');
+                $(this).addClass(animation + ' animated')
+            })
 
         // Animation Duration
-        slider.find('[data-duration]').each(function () {
-            var duration = $(this).data('duration');
-            $(this).css('animation-duration', duration);
-        })
+        slider
+            .find('[data-duration]')
+            .each(function () {
+                var duration = $(this).data('duration');
+                $(this).css('animation-duration', duration);
+            })
 
         // Animation Dealy
-        slider.find('[data-delay]').each(function () {
-            var delay = $(this).data('delay');
-            $(this).css('animation-delay', delay);
-        })
+        slider
+            .find('[data-delay]')
+            .each(function () {
+                var delay = $(this).data('delay');
+                $(this).css('animation-delay', delay);
+            })
 
         // Translate Animation
         function translateAnim(event) {
@@ -113,29 +112,26 @@
 
             layer.each(function () {
                 var animation = $(this).data('animation');
-                $(this).removeClass(animation + ' animated').css('opacity', '0');
+                $(this)
+                    .removeClass(animation + ' animated')
+                    .css('opacity', '0');
             })
 
         }
         // TranslateD Animation
         function translatedAnim(event) {
 
-            var layer = $(event.target).find('.owl-item.active').find('[data-animation]');
+            var layer = $(event.target)
+                .find('.owl-item.active')
+                .find('[data-animation]');
 
             layer.each(function () {
                 var animation = $(this).data('animation');
-                $(this).addClass(animation + ' animated').css('opacity', '1');
+                $(this)
+                    .addClass(animation + ' animated')
+                    .css('opacity', '1');
             })
         }
     }
-
-
-
-
-
-
-
-
-
 
 })(jQuery); // End of use strict
