@@ -22,7 +22,7 @@
     // Document Ready Function
     $(document).ready(function () {
         animations();
-
+        mobileMenu();
     });
 
     // Window Resize Function
@@ -47,8 +47,29 @@
         AOS.init({
             offset: 50
         });
+
     }
 
+    // ========================== Mobile Responsive Menu ==========================
+    function mobileMenu() {
+        var menu = $('.page-sidebar').html();
+        var mobMenu = '<div class="mobile-menu-slide py-4">' + menu + '</div>';
+        $('body').prepend(mobMenu);
+
+        $('.mobile-menu-icon').on('click', function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            $('.mobile-menu-slide').addClass('show');
+        })
+
+        // Hide on click outside
+        $(document).on('click', function (e) {
+            if (!(e.target.closest('.mobile-menu-slide'))) {
+                $('.mobile-menu-slide').toggleClass('show');
+            }
+        })
+
+    }
     // ========================== HeroSlider ==========================
     function heroSlider() {
         var slider = $('.hero-slider');

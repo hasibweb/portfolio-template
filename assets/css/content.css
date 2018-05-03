@@ -16,6 +16,10 @@
     padding-right: 10px;
 }
 
+.portfolio-area .portfolio-items .card {
+    height: 100%;
+}
+
 /* ================= Services Area ================= */
 
 .services-area figure {
@@ -92,10 +96,28 @@
     border-left: 0px solid transparent;
     border-right: 60px solid transparent;
     top: 100%;
-    left: 30%;
+    left: 140px;
     border-top: 32px solid #fff;
 }
 
 .skills-area .test-message .author {
-    padding: 20px 0;
+    padding: 20px 110px 0;
+}
+
+/* ===================== Contact Block ===================== */
+
+.contact-block {
+    color: #4b4f5d;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.contact-block .c-b-footer {
+    box-shadow: 0px 23px 56px 0px #5d5d5d;
+}
+
+/* ===================== Map Block ===================== */
+
+.map-block {
+    border-radius: 5px;
 }
