@@ -16,7 +16,6 @@
     $(window).on('load', function () {
         preloaderSetup();
         heroSlider();
-        // animations();
 
     });
 
@@ -24,6 +23,7 @@
     $(document).ready(function () {
         animations();
         mobileMenu();
+
     });
 
     // Window Resize Function
@@ -42,7 +42,9 @@
 
     // ========================== Animations ==========================
     function animations() {
-        AOS.init({offset: 50});
+        AOS.init({
+            offset: 50
+        });
 
     }
 
@@ -71,16 +73,25 @@
         var slider = $('.hero-slider-init');
         var sliderNav = $('.hero-slider-nav');
         var count = $('.hero-slider-nav li').length;
-        slider.slick({slidesToShow: 1, slidesToScroll: 1, arrows: false, asNavFor: sliderNav})
-        sliderNav.slick({
-            slidesToShow: count,
+        slider.slick({
+            slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
+            asNavFor: sliderNav,
+            infinite: true,
+            fade: true
+        })
+        sliderNav.slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            arrows: false,
             asNavFor: slider,
-            dots: true,
+            dots: false,
             centerMode: true,
             focusOnSelect: true,
-            vertical: true
+            vertical: true,
+            adaptiveHeight: true
         })
 
         // Add Animation Globaly
@@ -107,8 +118,8 @@
                 $(this).css('animation-delay', delay);
             })
 
-        // Translate Animation
-        function translateAnim(event) {
+        // Before Change
+        slider.on('beforeChange', function (event) {
             var layer = $(event.target).find('[data-animation]');
 
             layer.each(function () {
@@ -117,13 +128,11 @@
                     .removeClass(animation + ' animated')
                     .css('opacity', '0');
             })
-
-        }
-        // TranslateD Animation
-        function translatedAnim(event) {
-
+        })
+        // After Change
+        slider.on('afterChange', function (event) {
             var layer = $(event.target)
-                .find('.owl-item.active')
+                .find('.slick-slide.slick-active')
                 .find('[data-animation]');
 
             layer.each(function () {
@@ -132,7 +141,8 @@
                     .addClass(animation + ' animated')
                     .css('opacity', '1');
             })
-        }
+        })
+
     }
 
 })(jQuery); // End of use strict

@@ -12,19 +12,20 @@
 
 .hero-slider-nav {
     position: absolute;
-    top: 50%;
+    top: 50px;
     right: 0;
-    width: 50px;
-    transform: translateY(-50%);
+    width: 60px;
     height: 100%;
+    margin-bottom: 0;
 }
 
-.hero-slider-nav .slick-list .slick-track .slick-slide {
+.hero-slider-nav .slick-list {
+    padding: 0;
+}
+
+.hero-slider-nav .slick-list .slick-track .slick-slide li {
+    margin-top: 70px;
     transform: rotate(90deg);
-}
-
-.hero-slider-nav .slick-list .slick-track .slick-slide {
-    margin-top: 50px;
 }
 
 /* ================= Portfolio Area ================= */
